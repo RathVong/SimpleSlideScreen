@@ -2,7 +2,7 @@
 Simple library example of a slide screen in android
 
 
-![alt text](https://github.com/RathVong/SimpleSlideScreen/blob/master/layout.png)
+![alt text](https://github.com/RathVong/SimpleSlideScreen/blob/master/layout_example.jpg)
 
 
 The library has not been tested thoroughly yet. 
