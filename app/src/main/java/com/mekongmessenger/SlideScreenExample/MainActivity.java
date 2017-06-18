@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Scrolling");
         layout.setDescription("Easily scroll from left to right. ");
-        layout.setImage(R.drawable.f);
+        layout.setImage(R.drawable.b);
 
         return layout;
     }
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Modify");
         layout.setDescription("Modify button colours or button names. ");
-        layout.setImage(R.drawable.f);
+        layout.setImage(R.drawable.d);
 
         return layout;
     }
