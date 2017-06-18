@@ -43,11 +43,7 @@ public class SlideScreenActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-
-            layouts = (ArrayList<ScreenData>) bundle.getSerializable("layouts");
-
-
-
+        layouts = (ArrayList<ScreenData>) bundle.getSerializable("layouts");
 
         // Checking for first time launch - before calling setContentView()
         slideOptions = new SlideOptions(this);
@@ -61,6 +57,16 @@ public class SlideScreenActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
 
+        setupViews();
+    }
+
+    private void setupViews(){
+        initViews();
+        setupViewPager(viewPager);
+        initButtons();
+    }
+
+    private void initViews(){
         setContentView(R.layout.activity_slide_screen);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -68,17 +74,14 @@ public class SlideScreenActivity extends AppCompatActivity {
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnNext = (Button) findViewById(R.id.btn_next);
 
+        changeStatusBarColor();
+    }
 
+    private void initButtons(){
         btnSkip.setTextColor(layouts.get(0).getLeftButtonColors());
         btnNext.setTextColor(layouts.get(0).getRightButtonColors());
         btnSkip.setText(layouts.get(0).getLeftButtonText());
         btnNext.setText(layouts.get(0).getRightButtonText());
-
-
-      // making notification bar transparent
-        changeStatusBarColor();
-
-        setupViewPager(viewPager);
 
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,22 +106,18 @@ public class SlideScreenActivity extends AppCompatActivity {
         });
     }
 
+    //Setup the viewpager and initalize data passed in bundle
 
     private void setupViewPager(ViewPager viewPager) {
        final ViewPagerAdapter myViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
+        final int size = layouts.size();
 
-        try {
-            final int size = layouts.size();
-            for (int i = 0; i < size; i++) {
-                myViewPagerAdapter.addFragment(new ScreenFragment(), String.valueOf(i));
-                Bundle b = new Bundle();
-                b.putParcelable("layout", layouts.get(i));
-                myViewPagerAdapter.getmFragmentList().get(i).setArguments(b);
-         }
-
-        }catch (Exception e){
-            e.printStackTrace();
+        for (int i = 0; i < size; i++) {
+            myViewPagerAdapter.addFragment(new ScreenFragment(), String.valueOf(i));
+            Bundle b = new Bundle();
+            b.putParcelable("layout", layouts.get(i));
+            myViewPagerAdapter.getmFragmentList().get(i).setArguments(b);
         }
 
 
@@ -127,6 +126,8 @@ public class SlideScreenActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager, true);
         tabLayout.setSelectedTabIndicatorColor(layouts.get(0).getDotsActiveColor());
 
+        //Remove all text from each indicator
+        //May add an option to have numbers in the future
         for (int i = 0; i < layouts.size(); i++) {
                 tabLayout.getTabAt(i).setText("");
            }
