@@ -2,7 +2,17 @@
 Simple library example of a slide screen in android
 
 
+![alt text](https://github.com/RathVong/SimpleSlideScreen/blob/master/layout.png)
+
+
 The library has not been tested thoroughly yet. 
+
+
+
+
+
+
+
 
 Creating in view in your layout is simple ->
 
