@@ -6,7 +6,20 @@ The library has not been tested thoroughly yet.
 
 Creating in view in your layout is simple ->
 
-   private ScreenData layout1(){
+
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        SlideScreenActivity.start(this, initLayout());
+    }
+
+    private ScreenData layout1(){
         ScreenData layout = new ScreenData();
         layout.setTitleTextSize(8);
         layout.setDescriptionTextSize(5);
@@ -53,13 +66,4 @@ Creating in view in your layout is simple ->
         layout.add(layout3());
         return layout;
     }
-    
-    //To start the slide screen activity ->
-    
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        SlideScreenActivity.start(this, initLayout());
-    }
+   
