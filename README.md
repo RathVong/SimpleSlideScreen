@@ -4,7 +4,7 @@ Simple library example of a slide screen in android
 
 The library has not been tested thoroughly yet. 
 
-Creating a layout ->
+Creating in view in your layout is simple ->
 
    private ScreenData layout1(){
         ScreenData layout = new ScreenData();
@@ -54,7 +54,7 @@ Creating a layout ->
         return layout;
     }
     
-    To start the slide screen activity ->
+    //To start the slide screen activity ->
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
