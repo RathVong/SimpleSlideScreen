@@ -21,6 +21,8 @@ Creating in view in your layout is simple ->
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,7 @@ Creating in view in your layout is simple ->
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Scrolling");
         layout.setDescription("Easily scroll from left to right. ");
-        layout.setImage(R.drawable.f);
+        layout.setImage(R.drawable.b);
 
         return layout;
     }
@@ -63,7 +65,7 @@ Creating in view in your layout is simple ->
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Modify");
         layout.setDescription("Modify button colours or button names. ");
-        layout.setImage(R.drawable.f);
+        layout.setImage(R.drawable.d);
 
         return layout;
     }
@@ -76,4 +78,3 @@ Creating in view in your layout is simple ->
         layout.add(layout3());
         return layout;
     }
-   
