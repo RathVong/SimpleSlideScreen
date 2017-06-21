@@ -14,7 +14,7 @@ The library has not been tested thoroughly yet.
 
 
 
-Creating in view in your layout is simple ->
+Creating a view in your activity is simple ->
 
 
 
