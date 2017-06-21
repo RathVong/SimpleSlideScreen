@@ -9,9 +9,13 @@ import android.view.WindowManager;
  * Created by brucel33 on 17/06/17.
  */
 
-class Utils {
+public class Utils {
     public static int pixelToDP(int pixelDP){
         float density =  Resources.getSystem().getDisplayMetrics().density;
         return (int)(pixelDP * density);
+    }
+
+    public static DisplayMetrics getDisplayMetrics(){
+        return Resources.getSystem().getDisplayMetrics();
     }
 }

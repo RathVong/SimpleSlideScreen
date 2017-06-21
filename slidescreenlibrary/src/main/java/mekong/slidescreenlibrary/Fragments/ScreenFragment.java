@@ -29,6 +29,7 @@ import com.bumptech.glide.request.transition.Transition;
 
 import mekong.slidescreenlibrary.R;
 import mekong.slidescreenlibrary.ScreenData;
+import mekong.slidescreenlibrary.Utils;
 
 /**
  * Created by brucel33 on 17/06/17.
@@ -91,23 +92,22 @@ public class ScreenFragment extends Fragment {
     }
 
     private void setupImage(){
-        DisplayMetrics metrics = new DisplayMetrics();
-        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
-        final int imageWidth = metrics.widthPixels;
-        final int imageHeight = (int) (metrics.heightPixels * 0.6);
+        final int imageWidth = Utils.getDisplayMetrics().widthPixels;
+        final int imageHeight = (int) (Utils.getDisplayMetrics().heightPixels * 0.6);
 
         RelativeLayout.LayoutParams imageParams = (RelativeLayout.LayoutParams) imageView.getLayoutParams();
-
         imageParams.width = imageWidth;
         imageParams.height = imageHeight;
-
         imageView.setLayoutParams(imageParams);
 
+        if (layout.getImage() > 0 ){
+            Glide.with(this)
+                    .load(layout.getImage())
+                    .into(imageView);
+        }
 
-        Glide.with(this)
-                .load(layout.getImage())
-                .into(imageView);
+
     }
 
 

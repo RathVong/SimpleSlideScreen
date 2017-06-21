@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         SlideScreenActivity.start(this, initLayout());
     }
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Images");
         layout.setDescription("Images are automatically adjusted \n to fit the width and height of the screen.");
-        layout.setImage(R.drawable.f);
+        layout.setImage(R.drawable.food);
 
         return layout;
     }
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Scrolling");
         layout.setDescription("Easily scroll from left to right. ");
-        layout.setImage(R.drawable.b);
+        layout.setImage(R.drawable.balloons);
 
         return layout;
     }
@@ -52,13 +51,12 @@ public class MainActivity extends AppCompatActivity {
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Modify");
         layout.setDescription("Modify button colours or button names. ");
-        layout.setImage(R.drawable.d);
+        layout.setImage(R.drawable.dessert);
 
         return layout;
     }
 
     private ArrayList<ScreenData> initLayout(){
-
         ArrayList<ScreenData> layout = new ArrayList<>();
         layout.add(layout1());
         layout.add(layout2());
