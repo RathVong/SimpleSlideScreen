@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".SlideScreenActivity" android:theme="@style/ScreenSlideTheme"></activity>
+        <activity android:name=".Activities.SlideScreenActivity" android:theme="@style/ScreenSlideTheme"></activity>
     </application>
 
 </manifest>

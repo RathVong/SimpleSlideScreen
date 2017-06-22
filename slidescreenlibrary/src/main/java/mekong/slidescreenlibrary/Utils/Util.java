@@ -1,4 +1,4 @@
-package mekong.slidescreenlibrary;
+package mekong.slidescreenlibrary.Utils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -9,7 +9,7 @@ import android.view.WindowManager;
  * Created by brucel33 on 17/06/17.
  */
 
-public class Utils {
+public class Util {
     public static int pixelToDP(int pixelDP){
         float density =  Resources.getSystem().getDisplayMetrics().density;
         return (int)(pixelDP * density);

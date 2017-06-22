@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import mekong.slidescreenlibrary.ScreenData;
-import mekong.slidescreenlibrary.SlideScreenActivity;
+import mekong.slidescreenlibrary.Models.ScreenData;
+import mekong.slidescreenlibrary.Activities.SlideScreenActivity;
 
 public class MainActivity extends AppCompatActivity {
 

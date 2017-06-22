@@ -1,4 +1,4 @@
-package mekong.slidescreenlibrary;
+package mekong.slidescreenlibrary.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

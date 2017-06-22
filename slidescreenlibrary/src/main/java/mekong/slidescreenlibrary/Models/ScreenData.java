@@ -1,17 +1,17 @@
-package mekong.slidescreenlibrary;
+package mekong.slidescreenlibrary.Models;
 
 
 import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
+import mekong.slidescreenlibrary.Utils.Util;
 
 /**
  * Created by brucel33 on 17/06/17.
  */
 
-public class ScreenData implements Parcelable, Serializable {
+public class ScreenData implements Parcelable{
 
 
     //The colors of the background and font will only accept hexideximal String color format
@@ -33,6 +33,7 @@ public class ScreenData implements Parcelable, Serializable {
     private String rightButtonText = "Next";
     private String lastButtonText = "Got it!";
 
+
     protected ScreenData(Parcel in) {
         title = in.readString();
         description = in.readString();
@@ -48,6 +49,29 @@ public class ScreenData implements Parcelable, Serializable {
         leftButtonText = in.readString();
         rightButtonText = in.readString();
         lastButtonText = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeInt(image);
+        dest.writeInt(backgroundColor);
+        dest.writeInt(fontColor);
+        dest.writeInt(dotsActiveColor);
+        dest.writeInt(dotsInActiveColor);
+        dest.writeInt(leftButtonColors);
+        dest.writeInt(rightButtonColors);
+        dest.writeInt(titleTextSize);
+        dest.writeInt(descriptionTextSize);
+        dest.writeString(leftButtonText);
+        dest.writeString(rightButtonText);
+        dest.writeString(lastButtonText);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<ScreenData> CREATOR = new Creator<ScreenData>() {
@@ -108,11 +132,11 @@ public class ScreenData implements Parcelable, Serializable {
 
 
     public int getTitleTextSize() {
-        return Utils.pixelToDP(titleTextSize);
+        return Util.pixelToDP(titleTextSize);
     }
 
     public int getDescriptionTextSize() {
-        return Utils.pixelToDP(descriptionTextSize);
+        return Util.pixelToDP(descriptionTextSize);
     }
 
     public void setTitleTextSize(int titleTextSize) {
@@ -186,26 +210,5 @@ public class ScreenData implements Parcelable, Serializable {
         return fontColor;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(description);
-        dest.writeInt(image);
-        dest.writeInt(backgroundColor);
-        dest.writeInt(fontColor);
-        dest.writeInt(dotsActiveColor);
-        dest.writeInt(dotsInActiveColor);
-        dest.writeInt(leftButtonColors);
-        dest.writeInt(rightButtonColors);
-        dest.writeInt(titleTextSize);
-        dest.writeInt(descriptionTextSize);
-        dest.writeString(leftButtonText);
-        dest.writeString(rightButtonText);
-        dest.writeString(lastButtonText);
-    }
 }

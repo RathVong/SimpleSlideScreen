@@ -1,4 +1,4 @@
-package mekong.slidescreenlibrary;
+package mekong.slidescreenlibrary.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,23 +16,28 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
+import mekong.slidescreenlibrary.Adapters.ViewPagerAdapter;
 import mekong.slidescreenlibrary.Fragments.ScreenFragment;
+import mekong.slidescreenlibrary.Models.ScreenData;
+import mekong.slidescreenlibrary.R;
+import mekong.slidescreenlibrary.MySharedPreferences;
 
 public class SlideScreenActivity extends AppCompatActivity {
     public static final int RESULT_FINISHED = 10001;
+    public static final String KEY_LAYOUT = "layout";
+
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
     private ArrayList<ScreenData> layouts;
     private Button btnSkip, btnNext;
-    private SlideOptions slideOptions;
-
+    private MySharedPreferences mySharedPreferences;
 
 
     public static void start(Activity activity, ArrayList<ScreenData> layouts){
         final Intent intent = new Intent(activity,SlideScreenActivity.class);
         final Bundle bundle = new Bundle();
-        bundle.putSerializable("layouts", layouts);
+        intent.putExtra(KEY_LAYOUT, layouts);
         intent.putExtras(bundle);
         activity.startActivityForResult(intent, RESULT_FINISHED);
   }
@@ -41,13 +46,13 @@ public class SlideScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Bundle bundle = getIntent().getExtras();
 
-        layouts = (ArrayList<ScreenData>) bundle.getSerializable("layouts");
+
+        layouts = getIntent().getParcelableArrayListExtra(KEY_LAYOUT);
 
         // Checking for first time launch - before calling setContentView()
-        slideOptions = new SlideOptions(this);
-        if (slideOptions.isShowOnlyOnce() && !slideOptions.isFirstTimeLaunch()) {
+        mySharedPreferences = new MySharedPreferences(this);
+        if (mySharedPreferences.isShowOnlyOnce() && !mySharedPreferences.isFirstTimeLaunch()) {
             launchHomeScreen();
             finish();
         }
@@ -143,7 +148,7 @@ public class SlideScreenActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-        slideOptions.setFirstTimeLaunch(false);
+        mySharedPreferences.setFirstTimeLaunch(false);
         setResult(RESULT_FINISHED);
         finish();
     }

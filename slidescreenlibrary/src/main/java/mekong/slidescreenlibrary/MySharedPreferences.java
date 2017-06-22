@@ -7,10 +7,10 @@ import android.content.SharedPreferences;
  * Created by brucel33 on 17/06/17.
  */
 
-public class SlideOptions {
+public class MySharedPreferences {
 
-        SharedPreferences pref;
-        SharedPreferences.Editor editor;
+        android.content.SharedPreferences pref;
+        android.content.SharedPreferences.Editor editor;
         Context _context;
 
         // shared pref mode
@@ -23,7 +23,7 @@ public class SlideOptions {
 
         private static final String IS_SHOW_ONLY_ONCE = "IsShowOnlyOnce";
 
-        public SlideOptions(Context context) {
+        public MySharedPreferences(Context context) {
             this._context = context;
             pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
             editor = pref.edit();
