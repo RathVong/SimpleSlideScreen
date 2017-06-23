@@ -6,7 +6,8 @@ Simple library example of a slide screen in android
 
 Installation:
 
-  compile 'com.rathvong.simpleslidescreen:slidescreenlibrary:1.0.0-alpha'
+    Gradle:
+    compile 'com.rathvong.simpleslidescreen:slidescreenlibrary:1.0.0-alpha'
 
 
 
