@@ -6,13 +6,7 @@ Simple library example of a slide screen in android
 
 Installation:
 
-    Gradle:
-    compile ''com.rathvong.simpleslidescreen':slidescreenlibrary:'1.0.0-alpha''
-
-
-
-
-
+  compile 'com.rathvong.simpleslidescreen:slidescreenlibrary:1.0.0-alpha'
 
 
 
@@ -37,11 +31,21 @@ Creating a view in your activity is simple ->
     //** Create your layout  for each view
     private ScreenData layout1(){
         ScreenData layout = new ScreenData();
-        layout.setTitleTextSize(8);     //Set your title font size
-        layout.setDescriptionTextSize(5);   //Set your description font size
-        layout.setLeftButtonColors("#F5B041"); //Set the color of the left button of your layout
-        layout.setRightButtonColors("#F5B041"); //Set the color of the right button of your layout
-        layout.setTitle("Images"); //Set the title to be displayed
+        
+         //Set your title font size
+        layout.setTitleTextSize(8);
+        
+        //Set your description font size
+        layout.setDescriptionTextSize(5);   
+        
+        //Set the color of the left button of your layout
+        layout.setLeftButtonColors("#F5B041"); 
+        
+        //Set the color of the right button of your layout
+        layout.setRightButtonColors("#F5B041"); 
+        
+        //Set the title to be displayed
+        layout.setTitle("Images"); 
         
         //Set the description to be displayed
         layout.setDescription("Images are automatically adjusted \n to fit the width and height of the screen."); 
