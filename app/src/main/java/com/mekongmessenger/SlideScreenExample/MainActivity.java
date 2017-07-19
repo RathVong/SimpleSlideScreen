@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ScreenData layout1(){
         ScreenData layout = new ScreenData();
-        layout.setTitleTextSize(8);
-        layout.setDescriptionTextSize(5);
+        layout.setTitleTextSize(16);
+        layout.setDescriptionTextSize(14);
         layout.setLeftButtonColors("#F5B041");
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Images");
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ScreenData layout2(){
         ScreenData layout = new ScreenData();
-        layout.setTitleTextSize(8);
-        layout.setDescriptionTextSize(5);
+        layout.setTitleTextSize(14);
+        layout.setDescriptionTextSize(12);
         layout.setLeftButtonColors("#F5B041");
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Scrolling");
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ScreenData layout3(){
         ScreenData layout = new ScreenData();
-        layout.setTitleTextSize(8);
-        layout.setDescriptionTextSize(5);
+        layout.setTitleTextSize(14);
+        layout.setDescriptionTextSize(12);
         layout.setLeftButtonColors("#F5B041");
         layout.setRightButtonColors("#F5B041");
         layout.setTitle("Modify");

@@ -5,8 +5,6 @@ import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import mekong.slidescreenlibrary.Utils.Util;
-
 /**
  * Created by brucel33 on 17/06/17.
  */
@@ -132,11 +130,11 @@ public class ScreenData implements Parcelable{
 
 
     public int getTitleTextSize() {
-        return Util.pixelToDP(titleTextSize);
+        return titleTextSize;
     }
 
     public int getDescriptionTextSize() {
-        return Util.pixelToDP(descriptionTextSize);
+        return descriptionTextSize;
     }
 
     public void setTitleTextSize(int titleTextSize) {
