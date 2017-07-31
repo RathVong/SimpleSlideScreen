@@ -4,15 +4,16 @@ Simple library example of a slide screen in android
 
 ![alt text](https://github.com/RathVong/SimpleSlideScreen/blob/master/layout_example.jpg)
 
-Installation:
-
+Installation
+-----
+   
     Gradle:
-    compile 'com.rathvong.simpleslidescreen:slidescreenlibrary:1.0.0-alpha'
+          compile 'com.rathvong.simpleslidescreen:slidescreenlibrary:1.0.0-alpha'
 
 
 
 Creating a view in your activity is simple ->
-
+------
 
     
 
